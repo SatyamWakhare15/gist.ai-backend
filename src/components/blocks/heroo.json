@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_heroos",
+  "info": {
+    "displayName": "Heroo"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Content": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "titlefirstpg_homes",
+  "info": {
+    "singularName": "titlefirstpg-home",
+    "pluralName": "titlefirstpg-homes",
+    "displayName": "Titlefirstpg_Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    }
+  }
+}

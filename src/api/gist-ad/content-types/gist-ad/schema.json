@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gist-ads",
+  "info": {
+    "singularName": "gist-ad",
+    "pluralName": "gist-ads",
+    "displayName": "Gist Ad"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

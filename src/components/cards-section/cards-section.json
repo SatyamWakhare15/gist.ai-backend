@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_cards_section_cards_sections",
+  "info": {
+    "displayName": "cards_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "buttonLink": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
