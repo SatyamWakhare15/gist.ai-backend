@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_subtext_subtexts",
+  "info": {
+    "displayName": "subtext"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "regex": "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$"
+    },
+    "altText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_products_products",
+  "info": {
+    "displayName": "products"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "regex": "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$"
+    }
+  },
+  "config": {}
+}

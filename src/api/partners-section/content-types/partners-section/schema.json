@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners_sections",
+  "info": {
+    "singularName": "partners-section",
+    "pluralName": "partners-sections",
+    "displayName": "Partners Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "cards": {
+      "type": "component",
+      "component": "cards.cards",
+      "repeatable": true
+    },
+    "subtext": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "text"
+    },
+    "buttonLink": {
+      "type": "string",
+      "regex": "^https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[/#?]?.*$"
+    }
+  }
+}
