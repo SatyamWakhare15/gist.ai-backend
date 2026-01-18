@@ -467,6 +467,105 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBrandLogoBrandLogo extends Struct.CollectionTypeSchema {
+  collectionName: 'brand_logos';
+  info: {
+    displayName: 'BrandLogo';
+    pluralName: 'brand-logos';
+    singularName: 'brand-logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    altText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::brand-logo.brand-logo'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCardCard extends Struct.CollectionTypeSchema {
+  collectionName: 'cards';
+  info: {
+    displayName: 'Card';
+    pluralName: 'cards';
+    singularName: 'card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    alterText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::card.card'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    altText: Schema.Attribute.String;
+    appIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    appStoreLink: Schema.Attribute.String;
+    consumerrLink: Schema.Attribute.String;
+    contactLink: Schema.Attribute.String;
+    copyright: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    logo1: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    privacyLink: Schema.Attribute.String;
+    products: Schema.Attribute.Component<'products.products', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    socialLinks: Schema.Attribute.String;
+    subtext: Schema.Attribute.Blocks;
+    supportLink: Schema.Attribute.String;
+    termsLink: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ApiGistAdGistAd extends Struct.CollectionTypeSchema {
   collectionName: 'gist-ads';
   info: {
@@ -478,19 +577,29 @@ export interface ApiGistAdGistAd extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    badgeIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    badgeText: Schema.Attribute.String;
+    buttonLink: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::gist-ad.gist-ad'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mainImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    videoFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -688,6 +797,71 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPartnersSectionPartnersSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'partners_sections';
+  info: {
+    displayName: 'Partners Section';
+    pluralName: 'partners-sections';
+    singularName: 'partners-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String;
+    buttonText: Schema.Attribute.Text;
+    cards: Schema.Attribute.Component<'cards.cards', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partners-section.partners-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtext: Schema.Attribute.Text;
+    title: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductSuiteSectionProductSuiteSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_suite_sections';
+  info: {
+    displayName: 'ProductSuiteSection';
+    pluralName: 'product-suite-sections';
+    singularName: 'product-suite-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-suite-section.product-suite-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoTitle: Schema.Attribute.String;
+    videoUrl: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiSliderImageSliderImage extends Struct.CollectionTypeSchema {
   collectionName: 'slider-images';
   info: {
@@ -745,6 +919,42 @@ export interface ApiTitlefirstpgHomeTitlefirstpgHome
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     Title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTryGistSectionTryGistSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'try_gist_sections';
+  info: {
+    displayName: 'Try Gist Section';
+    pluralName: 'try-gist-sections';
+    singularName: 'try-gist-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    askImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    buttonLink: Schema.Attribute.String;
+    buttonText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::try-gist-section.try-gist-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1262,6 +1472,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::brand-logo.brand-logo': ApiBrandLogoBrandLogo;
+      'api::card.card': ApiCardCard;
+      'api::footer.footer': ApiFooterFooter;
       'api::gist-ad.gist-ad': ApiGistAdGistAd;
       'api::gist-answer.gist-answer': ApiGistAnswerGistAnswer;
       'api::gist-attribution.gist-attribution': ApiGistAttributionGistAttribution;
@@ -1269,8 +1482,11 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::partners-section.partners-section': ApiPartnersSectionPartnersSection;
+      'api::product-suite-section.product-suite-section': ApiProductSuiteSectionProductSuiteSection;
       'api::slider-image.slider-image': ApiSliderImageSliderImage;
       'api::titlefirstpg-home.titlefirstpg-home': ApiTitlefirstpgHomeTitlefirstpgHome;
+      'api::try-gist-section.try-gist-section': ApiTryGistSectionTryGistSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

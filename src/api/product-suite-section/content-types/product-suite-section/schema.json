@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_suite_sections",
+  "info": {
+    "singularName": "product-suite-section",
+    "pluralName": "product-suite-sections",
+    "displayName": "ProductSuiteSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "videoUrl": {
+      "type": "text"
+    },
+    "videoTitle": {
+      "type": "string"
+    }
+  }
+}
